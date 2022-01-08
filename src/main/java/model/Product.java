@@ -1,6 +1,7 @@
 package model;
 
 import java.sql.Date;
+import java.util.List;
 
 public class Product {
     //id int auto_increment primary key,
@@ -21,7 +22,6 @@ public class Product {
     private int id;
     private int id_brand;
     private int id_category;
-    private int id_size;
     private String name;
     private long quantity;
     private Double price;
@@ -35,13 +35,75 @@ public class Product {
     private long quantity_sale;
     private String name_brand;
     private String name_category;
-    private String name_size;
+    private String imgMain;
+    private List<Size> sizeList;
+    private List<Img> imgList;
 
-    public Product(int id, int id_brand, int id_category, int id_size, String name, long quantity, Double price, Double discount, String detail, Double selling_price, Date create_date, Date modify_date, long view, long rate, long quantity_sale, String name_brand, String name_category, String name_size) {
+    public String getName_brand() {
+        return name_brand;
+    }
+
+    public void setName_brand(String name_brand) {
+        this.name_brand = name_brand;
+    }
+
+    public String getName_category() {
+        return name_category;
+    }
+
+    public void setName_category(String name_category) {
+        this.name_category = name_category;
+    }
+
+    public String getImgMain() {
+        return imgMain;
+    }
+
+    public void setImgMain(String imgMain) {
+        this.imgMain = imgMain;
+    }
+
+    public List<Size> getSizeList() {
+        return sizeList;
+    }
+
+    public void setSizeList(List<Size> sizeList) {
+        this.sizeList = sizeList;
+    }
+
+    public List<Img> getImgList() {
+        return imgList;
+    }
+
+    public void setImgList(List<Img> imgList) {
+        this.imgList = imgList;
+    }
+
+    public Product(int id_brand, int id_category, String name, long quantity, Double price, Double discount, String detail, Double selling_price, Date create_date, Date modify_date, long view, long rate, long quantity_sale, String name_brand, String name_category, String imgMain, List<Size> sizeList, List<Img> imgList) {
+        this.id_brand = id_brand;
+        this.id_category = id_category;
+        this.name = name;
+        this.quantity = quantity;
+        this.price = price;
+        this.discount = discount;
+        this.detail = detail;
+        this.selling_price = selling_price;
+        this.create_date = create_date;
+        this.modify_date = modify_date;
+        this.view = view;
+        this.rate = rate;
+        this.quantity_sale = quantity_sale;
+        this.name_brand = name_brand;
+        this.name_category = name_category;
+        this.imgMain = imgMain;
+        this.sizeList = sizeList;
+        this.imgList = imgList;
+    }
+
+    public Product(int id, int id_brand, int id_category, String name, long quantity, Double price, Double discount, String detail, Double selling_price, Date create_date, Date modify_date, long view, long rate, long quantity_sale, String name_brand, String name_category, String imgMain, List<Size> sizeList, List<Img> imgList) {
         this.id = id;
         this.id_brand = id_brand;
         this.id_category = id_category;
-        this.id_size = id_size;
         this.name = name;
         this.quantity = quantity;
         this.price = price;
@@ -55,27 +117,9 @@ public class Product {
         this.quantity_sale = quantity_sale;
         this.name_brand = name_brand;
         this.name_category = name_category;
-        this.name_size = name_size;
-    }
-
-    public Product(int id_brand, int id_category, int id_size, String name, long quantity, Double price, Double discount, String detail, Double selling_price, Date create_date, Date modify_date, long view, long rate, long quantity_sale, String name_brand, String name_category, String name_size) {
-        this.id_brand = id_brand;
-        this.id_category = id_category;
-        this.id_size = id_size;
-        this.name = name;
-        this.quantity = quantity;
-        this.price = price;
-        this.discount = discount;
-        this.detail = detail;
-        this.selling_price = selling_price;
-        this.create_date = create_date;
-        this.modify_date = modify_date;
-        this.view = view;
-        this.rate = rate;
-        this.quantity_sale = quantity_sale;
-        this.name_brand = name_brand;
-        this.name_category = name_category;
-        this.name_size = name_size;
+        this.imgMain = imgMain;
+        this.sizeList = sizeList;
+        this.imgList = imgList;
     }
 
     public Product() {
@@ -105,13 +149,6 @@ public class Product {
         this.id_category = id_category;
     }
 
-    public int getId_size() {
-        return id_size;
-    }
-
-    public void setId_size(int id_size) {
-        this.id_size = id_size;
-    }
 
     public String getName() {
         return name;
