@@ -30,11 +30,14 @@
 
 <div class="container">
     <img src="/view/img/dark-logo.png" class="logo" alt="">
+    <form action="/home">
     <div>
-        <input type="email" autocomplete="off" id="email" placeholder="email">
+        <input type="hidden" name="action" value="login">
+        <input type="email" autocomplete="off" id="email" placeholder="userName">
         <input type="password" autocomplete="off" id="password" placeholder="password">
         <button class="submit-btn">log in</button>
     </div>
+    </form>
     <a href="/signup" class="link">don't have an account? Create one</a>
 </div>
 

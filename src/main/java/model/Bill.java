@@ -1,6 +1,7 @@
 package model;
 
 import java.sql.Date;
+import java.util.List;
 
 public class Bill {
     private int id;
@@ -11,16 +12,22 @@ public class Bill {
     private String status_proccess;
     private String status_id;
     private String name_user;
+    private List<Product> productList;
+    private double bill_product;
+    private long quantity_product;
 
-    public Bill(int id, int id_user, Date create_date, Date modify_date, double total, String status_proccess, String status_id, String name_user) {
+
+    public Bill(int id, int id_user, Date create_date, Date modify_date, double total, String status_proccess, String name_user, List<Product> productList,double bill_product,long quantity_product ) {
         this.id = id;
         this.id_user = id_user;
         this.create_date = create_date;
         this.modify_date = modify_date;
         this.total = total;
         this.status_proccess = status_proccess;
-        this.status_id = status_id;
+        this.quantity_product =  quantity_product;
+        this.bill_product = bill_product;
         this.name_user = name_user;
+        this.productList = productList;
     }
 
     public Bill(int id_user, Date create_date, Date modify_date, double total, String status_proccess, String status_id, String name_user) {
@@ -33,6 +40,23 @@ public class Bill {
         this.name_user = name_user;
     }
 
+    public double getBill_product() {
+        return bill_product;
+    }
+
+    public void setBill_product(double bill_product) {
+        this.bill_product = bill_product;
+    }
+
+
+
+    public List<Product> getProductList() {
+        return productList;
+    }
+
+    public void setProductList(List<Product> productList) {
+        this.productList = productList;
+    }
     public Bill() {
     }
 

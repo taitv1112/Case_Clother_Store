@@ -25,16 +25,16 @@ public class SizeDao implements IDao<Size>{
         }
         return sizeList;
     }
-    public List<Size> getListByIdProduct() throws SQLException {
-        String select = "select Size.id as id,Size.id_product as id_product,Size.name as name from Size join product on Size.id_product = product.id where product.id = ?";
+    public List<Size> getListByIdProduct(int id) throws SQLException {
+        String select = "select Size.id as id,Size.id_product as id_product,Size.name as name from Size join product on Size.id_product = product.id where product.id = "+id;
         Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery(select);
         List<Size> sizeList = new ArrayList<>();
         while (resultSet.next()) {
-            int id = resultSet.getInt("id");
+            int idS = resultSet.getInt("id");
             int id_product = resultSet.getInt("id_product");
             String name = resultSet.getString("name");
-            sizeList.add(new Size(id,id_product, name));
+            sizeList.add(new Size(idS,id_product, name));
         }
         return sizeList;
     }

@@ -8,9 +8,9 @@ public class User {
     private String address;
     private String phone;
     private int id_role;
-    private int name_role;
+    private String name_role;
 
-    public User(int id, String userName, String password, String fullName, String address, String phone, int id_role, int name_role) {
+    public User(int id, String userName, String password, String fullName, String address, String phone, int id_role, String name_role) {
         this.id = id;
         this.userName = userName;
         this.password = password;
@@ -77,11 +77,11 @@ public class User {
         this.id_role = id_role;
     }
 
-    public int getName_role() {
+    public String getName_role() {
         return name_role;
     }
 
-    public void setName_role(int name_role) {
+    public void setName_role(String name_role) {
         this.name_role = name_role;
     }
 }

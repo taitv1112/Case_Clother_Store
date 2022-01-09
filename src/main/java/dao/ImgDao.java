@@ -25,8 +25,8 @@ public class ImgDao implements IDao<Img> {
         return imgList;
     }
 
-    public List<Img> getListByIdProduct() throws SQLException {
-        String select = "select Img.id as id,Img.id_product as id_product,Img.name as name from Img join product on Img.id_product = product.id where product.id = ?";
+    public List<Img> getListByIdProduct(int idP) throws SQLException {
+        String select = "select Img.id as id,Img.id_product as id_product,Img.name as name from Img join product on Img.id_product = product.id where product.id = "+idP;
         Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery(select);
         List<Img> imgList = new ArrayList<>();

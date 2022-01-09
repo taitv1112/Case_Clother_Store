@@ -4,21 +4,6 @@ import java.sql.Date;
 import java.util.List;
 
 public class Product {
-    //id int auto_increment primary key,
-    //id_brand int,
-    //id_category int,
-    //id_size int,
-    //name varchar(255),
-    //quantity bigint,
-    //price double,
-    //discount double,
-    //detail longtext,
-    //selling_price double,
-    //create_date datetime,
-    //modify_date datetime,
-    //view bigint,
-    //rate bigint,
-    //quantity_sale bigint,
     private int id;
     private int id_brand;
     private int id_category;
